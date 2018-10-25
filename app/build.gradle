@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    compileOptions.encoding = 'UTF-8'
+
+    defaultConfig {
+        applicationId "net.sourceforge.opencamera"
+        minSdkVersion 15
+        targetSdkVersion 28
+
+        renderscriptTargetApi 20
+        //renderscriptSupportModeEnabled true // don't use support library as it bloats the APK, and we don't need pre-4.4 support
+        //need build tools higher than 20 at least to support ScriptIntrinsicHistogram
+
+        testApplicationId "net.sourceforge.opencamera.test"
+        testInstrumentationRunner "android.test.InstrumentationTestRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+}
+
+dependencies {
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    implementation project(':openCVLibrary343')
+}
