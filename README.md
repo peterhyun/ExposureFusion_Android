@@ -1,5 +1,5 @@
 # ExposureFusion_Android
-HDR Camera midterm
+HDR Camera
 
 This is a HDR Camera android application using the exposure fusion algorithm. 
 The exposure fusion algorithm was developed by Tom Mertens, Jan Kautz, Frank Van Reeth from Hasselt University and University College London.  
